@@ -53,10 +53,6 @@ func main() {
 				dupeFound = true
 				break
 			}
-
-			if dupeFound {
-				break
-			}
 		}
 
 		loops++

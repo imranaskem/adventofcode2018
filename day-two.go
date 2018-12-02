@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func dayTwo(filename string) {
+func dayTwoPartOne(filename string) {
 	linesOfText := loadFromTextFile(filename)
 
 	containsTwoLetters := 0
@@ -40,4 +40,40 @@ func dayTwo(filename string) {
 	checkSum := containsTwoLetters * containsThreeLetters
 
 	fmt.Println(checkSum)
+}
+
+func dayTwo(filename string) {
+	linesOfText := loadFromTextFile(filename)
+	var commonLetters string
+	idFound := false
+
+	for _, originalLine := range linesOfText {
+
+		for _, comparisonLine := range linesOfText {
+			diffLetters := make(map[int]string)
+
+			for i := range originalLine {
+				if originalLine[i] != comparisonLine[i] {
+					diffLetters[i] = string(originalLine[i])
+				}
+
+			}
+			if len(diffLetters) == 1 {
+				for k := range diffLetters {
+					sb := strings.Builder{}
+					sb.WriteString(originalLine[0:k])
+					sb.WriteString(originalLine[k+1:])
+
+					commonLetters = sb.String()
+				}
+				break
+			}
+		}
+
+		if idFound {
+			break
+		}
+	}
+
+	fmt.Println(commonLetters)
 }

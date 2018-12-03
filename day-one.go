@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-func dayOne(filename string) {
-	lines := loadFromTextFile(filename)
+func dayOne(data []string) {
+	lines := data
 
 	freqs := make(map[int]int)
 

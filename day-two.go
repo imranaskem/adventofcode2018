@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-func dayTwoPartOne(filename string) {
-	linesOfText := loadFromTextFile(filename)
+func dayTwoPartOne(data []string) {
+	linesOfText := data
 
 	containsTwoLetters := 0
 	containsThreeLetters := 0
@@ -42,8 +42,8 @@ func dayTwoPartOne(filename string) {
 	fmt.Println(checkSum)
 }
 
-func dayTwo(filename string) {
-	linesOfText := loadFromTextFile(filename)
+func dayTwo(data []string) {
+	linesOfText := data
 	var commonLetters string
 	idFound := false
 

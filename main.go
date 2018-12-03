@@ -9,8 +9,13 @@ func main() {
 
 	switch day {
 	case "1":
-		dayOne("day1.txt")
+		data := loadFromTextFile("day1.txt")
+		dayOne(data)
 	case "2":
-		dayTwo("day2.txt")
+		data := loadFromTextFile("day2.txt")
+		dayTwo(data)
+	case "3":
+		data := loadFromTextFile("day3.txt")
+		dayThree(data)
 	}
 }
